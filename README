@@ -1,4 +1,4 @@
-This library will allow you to reuse your haml views as jQuery templates.  This way, you can write your view once, render it directly from a controller or from the client with an ajax call.  The main attributes are control flow parsing and reordering, and template objects that will use method_missing to replace ruby method calls with their analogous jQuery template variable names.
+This library will allow you to reuse your haml views as jQuery templates.  This way, you can write your view once, render it directly from a controller or from the client with an ajax call.  The main features are control flow parsing and reordering, and template objects that will use method_missing to replace ruby method calls with their analogous jQuery template variable names.
 
 You can use rails helpers within the partials and even add your own helpers to the scope.
 
