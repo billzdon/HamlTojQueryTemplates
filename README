@@ -2,7 +2,7 @@ This library will allow you to reuse your haml views as jQuery templates.  This 
 
 You can use rails helpers within the partials and even add your own helpers to the scope.
 
-Add this folder to your lib directory.  Then create a helper such as follows:
+Add this folder to your lib directory.  Then create a helper:
 
 module JsTemplateHelper
   require "haml_file"
