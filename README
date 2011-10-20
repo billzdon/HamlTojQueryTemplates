@@ -5,15 +5,12 @@ You can use rails helpers within the partials and even add your own helpers to t
 Add this folder to your lib directory.  Then create a helper such as follows:
 
 module JsTemplateHelper
-  
   require "haml_file"
 
   def haml_js_template(current_scope, partial_name, options = {})
-
     haml_tag :script, :type => "text/x-jquery-tmpl", :id => options[:as] || "#{partial_name}_template" do
       haml_concat HamlFile.new("#{RAILS_ROOT}/app/views/#{partial_name}.html.haml", :scope => current_scope, :with => options[:with]).render_js_template
     end
-
   end
 
 end
@@ -21,19 +18,17 @@ end
 
 In your view add a line such as:
 
-`- haml_js_template(self, "admin/content_module_guides/_show", :as => "content_module_guide_template", :with => :content_module_guide)
-`
+- haml_js_template(self, "admin/content_module_guides/_show", :as => "content_module_guide_template", :with => :content_module_guide)
+
 
 The attributes are the scope (in this case self, the actionview), the partial you want to convert, and options such as what you want the template to be called and what the variables will be that need to have their method calls converted.
 
 Finally, in your js file, you can render the template as follows:
 
 $("#new_content_module_guide_form").live("submit", function(event) {
-
 	event.preventDefault();
 
    	$.ajax({
-
           url: $(event.target).attr("action"),
           type: "post",
           data: $(this).serialize(),
